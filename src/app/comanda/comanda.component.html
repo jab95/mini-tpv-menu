@@ -1,0 +1,36 @@
+<main>
+        <div class="div-main" >
+            <div class="carta">
+                <mat-card class="example-card">
+                    <mat-card-header>
+                      <mat-card-title>Filete con patatas</mat-card-title>
+                      <mat-card-subtitle>7€</mat-card-subtitle>
+                    </mat-card-header>
+                    <img mat-card-lg-image  src="../../assets/filete-patatas.jpg">
+                   
+                    <mat-card-actions>
+                        <button class="btn-add" (click)="addPlato('filete-patatas')" mat-raised-button color="primary">Añadir plato</button>
+                    </mat-card-actions>
+                  </mat-card>
+                <mat-card class="example-card">
+                    <mat-card-header>
+                      <mat-card-title>Croquetas</mat-card-title>
+                      <mat-card-subtitle>5€</mat-card-subtitle>
+                    </mat-card-header>
+                    <img img mat-card-lg-image  src="../../assets/croquetas.jpg">
+                   
+                    <mat-card-actions >
+                        <button  class="btn-add" (click)="addPlato('croquetas')" mat-raised-button color="primary">Añadir plato</button>
+                    </mat-card-actions>
+                  </mat-card>
+                 
+        </div>
+        <footer>
+              <mat-form-field class="example-form-field">
+                <mat-label>Mesa de la comanda</mat-label>
+                <input #mesa matInput type="text" >
+              </mat-form-field>
+                <button class="btn-footer" (click)="addComanda()" mat-raised-button color="primary">Añadir comanda</button>
+            </footer>
+            </div>
+</main>

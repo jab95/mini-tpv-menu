@@ -1,0 +1,59 @@
+main{
+   width: 35%; 
+   min-width: fit-content;
+    position: relative;
+    top: 10%;
+    margin: 0 auto;
+   
+}
+
+.btn-plato{
+    position: absolute;
+    right: 10%;
+  }
+
+  
+
+.carta{
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.example-card{
+
+  width: fit-content;
+  max-width: 152px;
+  border-style: solid;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin: 20px !important;
+ 
+}
+
+.div-main{
+  background-color: bisque;
+  min-width: fit-content;
+  max-width: fit-content;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+footer{
+  padding: 20px;
+}
+
+.btn-footer{
+  margin: 0 auto;
+  display: block;
+
+}
+
+mat-card-actions{
+  margin-top: 5px !important;
+ 
+}
+
+.btn-add{
+  margin: 0 auto !important;
+  display: block !important;
+}
