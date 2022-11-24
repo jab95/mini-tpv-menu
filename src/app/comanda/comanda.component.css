@@ -2,7 +2,7 @@ main{
    width: 35%; 
    min-width: fit-content;
     position: relative;
-    top: 10%;
+    top: 2vh !important;
     margin: 0 auto;
    
 }
