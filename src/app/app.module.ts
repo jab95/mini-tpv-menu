@@ -14,17 +14,21 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ToastrModule } from 'ngx-toastr';
+import { MesasComponent } from './mesas/mesas.component';
+import {MatTabsModule} from '@angular/material/tabs';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ComandaComponent
+    ComandaComponent,
+    MesasComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatGridListModule,
+    MatTabsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,

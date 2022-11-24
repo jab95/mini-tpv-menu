@@ -1,5 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl,FormGroup } from '@angular/forms';
+import { MatTabGroup } from '@angular/material/tabs';
+import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Comanda } from '../models/Comanda';
 import { ComandasService } from '../services/comandas.service';
@@ -13,14 +15,25 @@ export class ComandaComponent implements OnInit {
  
   com = new Comanda()
 
-  @ViewChild("mesa") mesa: ElementRef;
+  @ViewChild(MatTabGroup) matTabGroup: MatTabGroup;
+
+  public updatePagination() {
+    setTimeout(() => {
+      if (this.matTabGroup) {
+        this.matTabGroup._tabHeader._alignInkBarToSelectedTab();
+      }
+    }, 1);
+    }
 
 
+  numeroMesa:number
   mesaDisabled!:boolean
   platos: Array<string>=[]
 
-  constructor(private comandasService:ComandasService,private toastr: ToastrService) { 
-   
+  constructor(private comandasService:ComandasService,private toastr: ToastrService,private _Activatedroute:ActivatedRoute) { 
+    this.numeroMesa=Number(this._Activatedroute.snapshot.paramMap.get("mesa"))
+   this.platos=[]
+
   }
 
   ngOnInit(): void {
@@ -36,7 +49,7 @@ export class ComandaComponent implements OnInit {
     }
 
         this.com.platos = this.platos
-    this.com.mesa = this.mesa.nativeElement.value
+    this.com.mesa = this.numeroMesa
 
     this.comandasService.addComanda(this.com).subscribe({next:data=>{
     
@@ -45,7 +58,6 @@ export class ComandaComponent implements OnInit {
     },complete:()=>{
 
       this.platos=[]
-      this.mesa.nativeElement.value=""
       this.mesaDisabled=false
       this.com = new Comanda()
 
@@ -56,11 +68,8 @@ export class ComandaComponent implements OnInit {
 
   addPlato(plato:string){
 
-    if(this.mesa.nativeElement.value=="" || this.mesa.nativeElement.value==null ){
-        this.toastr.error('Error', 'Indique una mesa primero');    }else{
       this.platos.push(plato)
       this.mesaDisabled=true
-      }
 
   }
 

@@ -57,3 +57,11 @@ mat-card-actions{
   margin: 0 auto !important;
   display: block !important;
 }
+
+.btn-add-2{
+ text-align: left;
+  margin: 25px;
+  width: 100%;
+  max-width: fit-content;
+}
+
