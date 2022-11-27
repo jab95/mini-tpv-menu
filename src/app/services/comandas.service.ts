@@ -6,7 +6,7 @@ import { HttpClient, HttpHeaders} from '@angular/common/http'
 })
 export class ComandasService {
 
-  url = "https://mini-tpv-server.herokuapp.com:3100/comandas/add"
+  url = "https://mini-tpv-backend-production.up.railway.app:"+process.env.PORT+"/comandas/add"
   constructor(private http:HttpClient) { }
  
   public addComanda(comanda:any){
